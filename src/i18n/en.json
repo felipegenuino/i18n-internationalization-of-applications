@@ -1,0 +1,7 @@
+{
+    "translation": {
+        "language":"English",
+        "task_create_one": "Task created",
+        "task_create_other": "{{count}} tasks created"
+    }
+}

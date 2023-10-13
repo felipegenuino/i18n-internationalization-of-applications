@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# Internacionalizando Reactjs com i18n
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Install pacotes react-i18next i18next
+```shell
+npm install react-i18next i18next 
+ ```
 
-## Available Scripts
+## Criar pasta e arquivos relacionados
+. Criar pasta ```i18n``` e arquivos ``` pt.json```  e ``` en.json``` 
 
-In the project directory, you can run:
+### Estrutura
+<pre>
+├── node_modules/
+├── public/
+└── src
+    └── i18n
+        ├── i18n.jsx
+        ├── pt.json
+        ├── en.json
+    ├── App.css
+    ├── App.js
+    ├── index.css
+    ├── index.js
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── README.md
+</pre>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```jsx
+// src/i18n/i18next.jsx
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+import i18next from "i18next";
+import { initReactI18next } from "react-i18next";
+import en from './en.json'
+import pt from './pt.json'
 
-### `npm test`
+i18next
+    .use(initReactI18next)
+    .init({
+        compatibilityJSON: "v4",
+        lng: 'en', // if you're using a language detector, do not define the lang option
+        fallbackLng: 'en',
+        resources: {
+            en,
+            pt
+        },
+        react: {
+            useSuspense: false
+        },
+        interpolation: {
+            escapeValue: false
+        }
+    })
+export default i18next
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```json
+// src/i18n/pt.json
 
-### `npm run build`
+{
+    "translation": {
+        "language":"Português",
+        "task_create_one": "Tarefa criada",
+        "task_create_other": "{{count}} tarefas criadas"
+    }
+}
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```json
+// src/i18n/en.json
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+{
+    "translation": {
+        "language":"English",
+        "task_create_one": "Task created",
+        "task_create_other": "{{count}} tasks created"
+    }
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Implementando na aplicação
+- Importar arquivo i18n.jsx en.json e pt.json
+- Importar e chamar hook useTranslation
+- Implementar usando {t('YOUR_TRANSLATION_STRING')}
 
-### `npm run eject`
+```jsx
+// App.jsx
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+import './i18n/i18n.jsx'
+import { useTranslation } from 'react-i18next';
+import './App.css';
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+function App() {
+  const { t, i18n } = useTranslation()
+  return (
+    <div>
+      <h1>{t('language')}</h1>
+    </div>
+  );
+}
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+export default App;
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```

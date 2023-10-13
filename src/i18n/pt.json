@@ -1,0 +1,7 @@
+{
+    "translation": {
+        "language":"Português",
+        "task_create_one": "Tarefa criada",
+        "task_create_other": "{{count}} tarefas criadas"
+    }
+}
