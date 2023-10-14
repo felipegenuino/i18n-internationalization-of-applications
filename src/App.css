@@ -1,7 +1,97 @@
 button {
-  border: none;
+  border: transparent;
 }
 
-button.button-active {
-  border: 1px solid;
+button.button-active {}
+
+/* cosmetic */
+
+:root {
+  --background: #16161a;
+  --button: #7f5af0;
+  --headline: #fffffe;
+  --button-text: #fffffe;
+  --paragraph: #94a1b2;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400');
+
+html {
+  font-size: 100%;
+}
+
+/*16px*/
+
+body {
+  background-color: var(--background);
+  box-sizing: border-box;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.75;
+}
+
+article {
+  width: 36rem;
+  max-width: 80%;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+}
+
+header strong {
+  font-size: 1rem;
+  margin-left: 1rem;
+  color: var(--button-text);
+}
+
+nav {}
+
+nav button {
+  background-color: transparent;
+  font-size: 1.6rem;
+  opacity: 0.3;
+  transition: all 0.2s linear;
+}
+
+nav button.button-active {
+  opacity: 1;
+  font-size: 2.2rem;
+}
+
+button {
+  background-color: var(--button);
+  color: var(--button-text);
+}
+
+main {}
+
+
+
+section {}
+
+h1 {
+  color: var(--headline);
+  font-size: 3.052rem;
+  line-height: 1;
+}
+
+h2 {
+  color: var(--headline);
+  font-size: 2.441rem;
+}
+
+h3 {
+  color: var(--headline);
+  font-size: 1.953rem;
+}
+
+p {
+  color: var(--paragraph);
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }

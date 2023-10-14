@@ -2,6 +2,10 @@
     "translation": {
         "language":"Português",
         "task_create_one": "Tarefa criada",
-        "task_create_other": "{{count}} tarefas criadas"
-    }
+        "task_create_other": "{{count}} tarefas criadas",
+        "post_title": "Os Princípios Fundamentais do Design: Um Guia Abrangente",
+        "post_description": "O design é uma combinação perfeita de criatividade e estratégia. É a arte de comunicar uma mensagem, contar uma história e criar uma experiência memorável. Por trás de cada design impactante, existem princípios fundamentais que servem como alicerces para o sucesso. Neste guia abrangente, exploraremos esses elementos e princípios básicos do design que todo designer deve dominar para criar projetos verdadeiramente impactantes.",
+        "keys_title": "Elementos-Chave do Design",
+        "keys_names": "1. Cores: A Paleta de Emoções, 2. Tipografia: A Arte das Palavras, 3. Layout: A Organização Visual, 4. Formas e Espaço: A Geometria do Design"
+     }
 }

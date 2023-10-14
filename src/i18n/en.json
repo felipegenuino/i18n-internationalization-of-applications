@@ -2,6 +2,10 @@
     "translation": {
         "language":"English",
         "task_create_one": "Task created",
-        "task_create_other": "{{count}} tasks created"
+        "task_create_other": "{{count}} tasks created",
+        "post_title": "The Fundamental Principles of Design: A Comprehensive Guide",
+        "post_description": "Design is a perfect blend of creativity and strategy. It is the art of communicating a message, telling a story, and creating a memorable experience. Behind every impactful design, there are fundamental principles that serve as foundations for success. In this comprehensive guide, we will explore these basic elements and principles of design that every designer must master to create truly impactful projects. ",
+        "keys_title": "Key Design Elements",
+        "keys_names": "1. Color: The Palette of Emotions, 2. Typography: The Art of Words, 3. Layout: Visual Organization, 4. Shapes and Space: The Geometry of Design"
     }
 }
