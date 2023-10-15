@@ -256,5 +256,7 @@ export default App;
 ### Repository and Demo
 
 **Demo**: https://i18n-internationalization-of-applications-wheat.vercel.app/
+
 **Git repository**: https://github.com/LearnWithFelipe/i18n-internationalization-of-applications
+
 **CodeSandbox**: https://codesandbox.io/s/i18n-internationalization-of-applications-txfxh6 
