@@ -1,5 +1,8 @@
 # Internacionalizando Reactjs com i18n
 
+![screenshot](screenshot.gif)
+ 
+
 ## Install pacotes react-i18next i18next
 ```shell
 npm install react-i18next i18next 
