@@ -22,7 +22,6 @@ npm install react-i18next i18next
         ├── en.json
     ├── App.css
     ├── App.js
-    ├── index.css
     ├── index.js
 ├── .gitignore
 ├── package.json
@@ -206,6 +205,8 @@ p {
 ## Melhoria 
 
 ```jsx
+// App.js
+
 import './i18n/i18n.jsx'
 import { useTranslation } from 'react-i18next';
 import './App.css';
